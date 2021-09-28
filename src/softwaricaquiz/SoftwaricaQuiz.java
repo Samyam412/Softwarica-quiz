@@ -8,25 +8,28 @@ import javax.swing.*;
         
 public class SoftwaricaQuiz extends JFrame implements ActionListener{
     JButton b1;
-    JTextField t1;
-    SoftwaricaQuiz(){
+    JLabel l1,l2,l3;
+    static JTextField t1;
+    static String username;
+    SoftwaricaQuiz(String username){
+//        this.username = username;
         setBounds(300, 200, 1200, 500 ); //frame location,size
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setLayout(null);
         
         
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("softwaricaQuiz/images/login.jpg"));
-        JLabel l1 = new JLabel(i1);
+        l1 = new JLabel(i1);
         l1. setBounds(-100 ,0 , 1400, 400 );
         add(l1);
         
-        JLabel l2 = new JLabel("Softwarica Quiz");
+        l2 = new JLabel("Softwarica Quiz");
         l2.setFont(new Font("Times new roman",Font.BOLD, 45));
         l2.setForeground(Color.blue);
         l2.setBounds(100,35,1200,800);
         add(l2);
          
-        JLabel l3 = new JLabel("Enter Your Name:");
+        l3 = new JLabel("Enter Your Name:");
         l3.setFont(new Font("Times new roman",Font.BOLD, 20));
         l3.setForeground(Color.blue);
         l3.setBounds(500,35,1200,800);
@@ -37,6 +40,8 @@ public class SoftwaricaQuiz extends JFrame implements ActionListener{
         t1.setBounds(670,420,300,25);
         add(t1);
         
+        
+        
         b1 = new JButton("Enter");
         b1.setBackground(new Color(30,144,254));
         b1.addActionListener(this);
@@ -46,14 +51,25 @@ public class SoftwaricaQuiz extends JFrame implements ActionListener{
         
         setVisible(true);//makes the screen visible
     }
+
+    SoftwaricaQuiz() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public String getUsername(){
+        
+        return t1.getText();
+    } 
     
     public void actionPerformed(ActionEvent ae){
         
         if(ae.getSource()== b1){
             
-            String Username = t1.getText();
+            username = t1.getText();
             this.setVisible(false);
-            new Quiz();
+            Quiz quiz = new Quiz("Samyam");
+            
+            
             
         }
     
@@ -62,7 +78,7 @@ public class SoftwaricaQuiz extends JFrame implements ActionListener{
     
     public static void main(String[] args) {
     
-    new SoftwaricaQuiz();
+    new SoftwaricaQuiz("").setVisible(true);
     
     }
     
