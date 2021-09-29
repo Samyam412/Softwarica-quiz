@@ -17,12 +17,13 @@ public class SoftwaricaQuiz extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.LIGHT_GRAY);
         setLayout(null);
         
-        
+        //main menu image
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("softwaricaQuiz/images/login.jpg"));
         l1 = new JLabel(i1);
         l1. setBounds(-100 ,0 , 1400, 400 );
         add(l1);
         
+        //text
         l2 = new JLabel("Softwarica Quiz");
         l2.setFont(new Font("Times new roman",Font.BOLD, 45));
         l2.setForeground(Color.blue);
@@ -41,7 +42,7 @@ public class SoftwaricaQuiz extends JFrame implements ActionListener{
         add(t1);
         
         
-        
+        //enter button
         b1 = new JButton("Enter");
         b1.setBackground(new Color(30,144,254));
         b1.addActionListener(this);
