@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class Quiz extends JFrame implements ActionListener{
     
-    JButton next,submit,quit,lifeline;
+    JButton next,submit,quit;
     public static int count = 0;
     public static int timer= 20;
     public static int ans_given = 0;
@@ -33,12 +33,13 @@ public class Quiz extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
         
-        
+        //quiz image
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("softwaricaQuiz/images/quiz.jpg"));
         JLabel l1 = new JLabel(i1);
         l1.setBounds(0,0,1200,500 );
         panel.add(l1);
         
+        //questions 
         qno = new JLabel("");
         qno.setFont(new Font("Tahome",Font.PLAIN,24));
         qno.setBounds(100,450,40,30);
@@ -49,7 +50,7 @@ public class Quiz extends JFrame implements ActionListener{
         question.setBounds(120,450,700,30);
         panel.add(question);
         
-        
+        //questions
         q[0][0] = "Which University is Softwarica partnered with?";
         q[0][1] = "Coventry University";
         q[0][2] = "London Metro University";
@@ -121,7 +122,7 @@ public class Quiz extends JFrame implements ActionListener{
         qa[8][1] = "Shyam Sundar Khatiwada";
         qa[9][1] = "Mathematics for Computer Science";
         
-        
+        //options
         opt1 = new JRadioButton("");
         opt1.setFont(new Font("Dialog",Font.PLAIN,20));
         opt1.setBackground(Color.WHITE);
@@ -163,7 +164,7 @@ public class Quiz extends JFrame implements ActionListener{
         panel.add(next);
         
         
-        
+        //submit button
         submit = new JButton("Submit");
         submit.setEnabled(false);
         submit.setFont(new Font("Tahoma",Font.PLAIN,20));
