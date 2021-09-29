@@ -65,9 +65,9 @@ public class Score extends JFrame implements ActionListener{
         {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/softwarica_quiz", "root", "Samyam2896");
-             
+            System.out.println("hello"); 
             stmt = connection.createStatement();
-            stmt.execute("INSERT INTO username (user,score) " + "VALUES('" + SoftwaricaQuiz.username + "', '" + score + ")");
+            stmt.execute("INSERT INTO softwarica_quiz.username (user,score) " + "VALUES('" + SoftwaricaQuiz.username + "', '" + score + ")");
         } 
         catch (Exception e) {
             e.printStackTrace();
